@@ -19,7 +19,6 @@ function selectSort(arr) {
     arr[i] = arr[temp];
     arr[temp] = val;
   }
-  console.log(arr);
   return arr;
 }
 
