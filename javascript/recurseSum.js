@@ -10,22 +10,37 @@ Output: Sum of all integer values
 
 */
 
+function recurseSum(n) {
+  if (!n) {
+    return 0;
+  }
+
+  return function(x) {
+    if (!x) {
+      return (n);
+    }
+    return recurseSum(n + x);
+  };
+}
+
+/*
+// OLD SOLUTION - Reading inherent `arguments` property of a function //
 function recurseSum() {
   if (!arguments[0]) {
-  	return 0;
+    return 0;
   }
 
   arg = arguments[0];
 
   return function() {
-  	if (!arguments[0]) {
-  		return arg;
-  	} else {
-  		return recurseSum(arguments[0] + arg);
-  	}
+    if (!arguments[0]) {
+      return arg;
+    } else {
+      return recurseSum(arguments[0] + arg);
+    }
   };
 }
-
+*/
 
 //////////////////////////////////////////////////
 // TESTS: [All should return `true`]
